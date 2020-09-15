@@ -1,11 +1,12 @@
 pycsob
 ======
 
-.. image:: https://circleci.com/gh/TwistoPayments/pycsob.svg?style=svg
-   :target: https://circleci.com/gh/TwistoPayments/pycsob
+.. image:: https://travis-ci.org/cedel1/pycsob.svg?branch=master
+    :target: https://travis-ci.org/cedel1/pycsob
 
-.. image:: https://badge.fury.io/py/pycsob.svg
-    :target: https://badge.fury.io/py/pycsob
+.. image:: https://codecov.io/gh/cedel1/pycsob/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/cedel1/pycsob
+
 
 Install:
 --------

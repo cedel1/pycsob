@@ -1,0 +1,37 @@
+dist: xenial
+
+language: python
+
+#branches:
+#  only:
+#    - KNJ-10127_add_extension_and_remove_py2_support
+
+#matrix:
+jobs:
+  include:
+#    - stage: Tests
+
+    - python: 3.8
+      env: TOXENV=py38
+
+    - python: 3.7
+      env: TOXENV=py37
+
+    - python: 3.6
+      env: TOXENV=py36
+
+#  allow_failures:
+    # Tests against Twisted trunk are allow to fail, as they are not supported.
+    #- env: TOXENV=coverage-py38-twtrunk,codecov
+
+    # This depends on external web sites, so it's allowed to fail.
+    #- env: TOXENV=docs-linkcheck
+
+
+install:
+  - travis_retry pip install tox
+  - python -VV
+
+
+script:
+- "tox -e $TOXENV"
