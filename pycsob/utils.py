@@ -1,3 +1,4 @@
+import logging
 import sys
 import re
 from base64 import b64encode, b64decode
@@ -14,6 +15,9 @@ try:
     from django.utils import timezone as datetime
 except ImportError:
     from datetime import datetime
+
+
+logger = logging.getLogger(__name__)
 
 
 class CsobVerifyError(Exception):
@@ -98,7 +102,7 @@ def validate_response(response, key):
                 if verify(o, one['signature'], key):
                     response.extensions.append(o)
                 else:
-                    raise CsobVerifyError('Cannot verify masked card extension response')
+                    logger.error('Cannot verify masked card extension response')
 
     return response
 
